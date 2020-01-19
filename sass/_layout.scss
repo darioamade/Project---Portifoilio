@@ -1,0 +1,53 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+header {
+    height: 100vh;
+	background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/13-small.jpg);
+	background-size: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+    overflow:hidden;
+	-webkit-transition: 3s;
+	transition: 3s;
+
+	
+	animation: animate; 
+	animation-direction: alternate-reverse ;
+	animation-duration: 50s ;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	animation-timing-function: ease-in-out;
+    backface-visibility: hidden;
+    
+}
+
+@keyframes animate {
+    0%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/13-small.jpg);
+
+    }20%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/9-small.jpg);
+
+
+    }40%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/4-small.jpg);
+
+    }60%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/5-small.jpg);
+
+    }80%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/9-small.jpg);
+
+    }100%{
+        background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5),url(../img/8-small.jpg));
+
+    }
+    
+}

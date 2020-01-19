@@ -1,0 +1,431 @@
+///////////////////////////////////////////
+//LOGO
+.logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+
+    @media only screen and (max-width: $bp-phone) { //desktop first aprox..
+        top: 6rem;
+        left: 4rem;
+    }
+    
+}
+
+.logo {
+    height: 14rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem ;
+
+
+    @media only screen and (max-width: $bp-largest) { //desktop first aprox..
+        height: 16rem;
+    }
+
+    @media only screen and (max-width: $bp-phone) { //desktop first aprox..
+        height: 12rem;
+        padding: .5rem ;
+    }
+
+    @media only screen and (max-width: $bp-small-2) { //desktop first aprox..
+        height: 10rem; 
+    }
+    
+}
+
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.heading-primary {
+    color: var(--color-grey-light-1);
+    text-transform: uppercase;    
+
+}
+
+.heading-primary-main {
+    display: block; //block ocupa toda faixa
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 25px;
+    font-family: 'Playfair Display';
+
+    animation-name: moveInRight;
+    animation-duration: 3s;
+   // animation-delay: 5s;
+    animation-timing-function: ease-in;
+
+
+    @media only screen and (max-width: $bp-medium) { //desktop first aprox..
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 20px;
+    }
+
+    @media only screen and (max-width: $bp-small) { 
+        font-size: 20px;
+        font-weight: 200;
+        letter-spacing: 20px;
+    }
+
+    @media only screen and (max-width: $bp-phone) { 
+        font-size: 16px;
+        margin: 2px;
+        font-weight: 700i;
+        letter-spacing: 20px;
+    }
+ 
+}
+
+.heading-primary-sub {
+    display: block; 
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 8px;
+   
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+
+
+    @media only screen and (max-width: $bp-largest) { //desktop first aprox..
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 6px;
+    }
+
+    @media only screen and (max-width: $bp-medium) { //desktop first aprox..
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;  
+    }
+
+    @media only screen and (max-width: $bp-small) { //desktop first aprox..
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 4px;  
+    }
+
+    @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+        font-size: 10.5px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        margin-top: 6px;
+    }  
+    @media only screen and (max-width: $bp-small-2) { //desktop first aprox..
+        display: block;
+        font-size: 8px;
+        font-weight: 500;
+        letter-spacing: 4px;  
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+
+    }
+    80% {
+        transform: translateX(10px);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+
+    }
+    80% {
+        transform: translateY(10px);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+///////////////////////////////////////////
+//USER-TOGGLE
+.navigation {
+    &__checkbox{
+        display: none;
+
+    }
+
+    &__button{
+        background-color: #fff;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.116);
+        text-align: center;
+        cursor: pointer;
+
+        @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+            height: 10rem;
+            width: 10rem;
+            position: fixed;
+            top: 9rem;
+            right: 9rem;}
+        }
+
+    &__background{
+        height: 6rem;
+        width: 6rem;
+
+        border-radius: 50%;
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem ;
+        //background-image: url(/img/4-small.jpg);
+        background-image: radial-gradient(rgb(17, 15, 16), rgb(14, 13, 13));
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        z-index: 1000;
+        @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+            height: 9rem;
+            width: 9rem;
+            top: 9.5rem;
+            right: 9.5rem;
+        }
+
+       
+
+        //transform: scale(80);
+        
+    }
+
+    &__nav {
+        height: 100vh;
+        width: 0%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500; 
+
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+   
+    }
+
+    &__list{
+        position: absolute ;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;  
+    }
+
+    &__item{
+        margin: 1rem;
+        
+    }
+
+    &__link { 
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 6rem;
+            font-weight: 300;
+            font-family: 'Playfair Display';
+            padding: 1rem 2rem;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient( 120deg, transparent 0%, transparent 50%, white 50%);
+            background-size: 225%;  
+            transition: all .3s;
+
+            @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+               
+                font-size: 8rem;
+               }
+        }  
+        
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: var(--color-grey-light-4);
+            transform: translateX(1rem) ;
+           
+        }
+    }
+///////////////////////////////////////////
+//Functionality 
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+      
+    }
+    ///////////////////////////////////////////
+//Navigation ICON ROUND
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: black;
+            display: inline-block;
+
+
+            @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+                margin-top: 2.5rem;
+                height: 2px;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before {top: -.8rem; }
+        &::after {top: .8rem; }
+    }
+
+    &__button:hover &__icon::before {
+            top:-1rem
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(1215deg);
+        
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-1215deg);
+    }
+}
+
+
+///////////////////////////////////////////
+//USER-NAV
+.user-nav {
+    
+    grid-column: full-start / full-end;
+    padding: .5rem;
+}
+
+.nav {
+    list-style: none;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+
+    &__link:link,
+    &__link:visited {
+       font-size: 1.4rem;
+       font-weight: 700;
+       letter-spacing: 4px;
+
+       color: var(--color-secondary);
+       text-decoration: none;
+       font-family: inherit;
+       text-transform: uppercase;
+       align-items: center;
+       padding: 1.5rem;
+       display: block;
+       cursor: pointer; 
+
+
+       @media only screen and (max-width:$bp-medium) { //desktop first aprox..
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-top: 2px;
+       }
+
+       @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-top: 4px;}
+         
+        }
+
+    &__link:hover,
+    &__link:active {
+        color: #ef6e22;
+    }
+}
+
+///////////////////////////////////////////
+//SOCIAL-LINKS
+
+.footer {
+    display: flex;  
+    justify-content: center;
+    align-self: center;
+    
+    position: absolute;
+    top: 240%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    cursor: pointer; 
+    
+    }
+
+    .icon-box {
+        height: 3.5rem;
+        width: 4.5rem;
+        fill: var( --color-secondary);
+
+
+       @media only screen and (max-width:$bp-phone) { //desktop first aprox..
+        height: 10rem;
+        width: 10rem; }
+        
+    
+        animation-name: moveInRight;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;  
+    }
+
+    

@@ -1,0 +1,82 @@
+
+:root {
+    --color-primary: #0D0D0D;
+    --color-primary-light : #011526;
+    --color-primary-dark : #024059;
+    --color-primary-dark-2 : #798C8C;
+
+    --color-secondary : #fff;
+
+    --color-grey-light-1: #F2F2F2;
+    --color-grey-light-2: #BFBFBF;
+    --color-grey-light-3: #8C8C8C;
+    --color-grey-light-4: #404040;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+    --line: 1px solid var(--color-grey-light-2);
+
+}
+
+$bp-largest: 75em;  //1200/16px= 75em
+$bp-large: 68.75em;  //1100/16px= 68.75em
+$bp-medium: 34.75em;  //700/16px= 34.75em
+$bp-small: 31.25em;  //500/16px= 31.25em
+$bp-phone: 23.44em;  //375/16px= 25em
+$bp-small-2: 20em;  //320/16px= 20em
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+
+html{
+	box-sizing: border-box;
+	font-size: 62.5%;  // 1rem=10px , 10px(that i want)/ 16px(browser default) =62.5%
+
+
+    @media only screen and (max-width: $bp-large) { //desktop first aprox..
+    	font-size: 50%;
+    }
+    @media only screen and (max-width: $bp-medium) { //desktop first aprox..
+    	font-size: 35%;
+    }
+    @media only screen and (max-width: $bp-small) { //desktop first aprox..
+    	font-size: 31.25%;
+    }
+    @media only screen and (max-width: $bp-phone) { //desktop first aprox..
+    	font-size: 20%;
+    }
+    @media only screen and (max-width: $bp-small-2) { //desktop first aprox..
+    	font-size: 18%;
+    }
+    
+    
+}
+
+body {
+    font-family:'Open sans' ,sans-serif ;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-light-1);
+    background-image: linear-gradient(to right bottom, var( --color-primary), var( --color-primary-light));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    min-height: 100vh; // my min heigt will 1oo% but if the display is bigger it can goes large than that
+} 
